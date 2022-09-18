@@ -2,9 +2,8 @@ import pandas as pd
 import requests
 import os
 
-# scroll down to the bottom to implement your solution
 
-if __name__ == '__main__':
+def initialize():
 
     if not os.path.exists('../Data'):
         os.mkdir('../Data')
@@ -31,6 +30,27 @@ if __name__ == '__main__':
         open('../Data/hr_data.xml', 'wb').write(r.content)
         print('Loaded.')
 
-        # All data in now loaded to the Data folder.
 
-    # write your code here
+def main():
+    initialize()
+
+    office_a = pd.read_xml('../Data/A_office_data.xml')
+    office_b = pd.read_xml('../Data/B_office_data.xml')
+    hr_data = pd.read_xml('../Data/hr_data.xml')
+
+    id_a = office_a["employee_office_id"].to_numpy()
+    office_a.index = ["A" + str(i) for i in id_a]
+
+    id_b = office_b["employee_office_id"].to_numpy()
+    office_b.index = ["B" + str(i) for i in id_b]
+
+    hr_data = hr_data.set_index("employee_id")
+
+    print(list(office_a.index.values))
+    print(office_b.index.values.tolist())
+    print(hr_data.index.values.tolist())
+
+
+if __name__ == '__main__':
+    main()
+
