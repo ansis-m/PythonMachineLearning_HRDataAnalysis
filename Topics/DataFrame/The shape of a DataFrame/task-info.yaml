@@ -1,0 +1,23 @@
+type: dataset
+files:
+- name: data/sample/input.txt
+  visible: true
+  text: |
+    name,age,education,sex,income
+    254343,36,1,1,>50k
+    476429,33,7,1,<50k
+    363510,33,1,0,>50k
+  learner_created: false
+- name: main.py
+  visible: true
+  text: "#  write your code here \n\n"
+  learner_created: false
+- name: data/dataset/input.txt
+  visible: true
+  learner_created: true
+feedback_link: https://hyperskill.org/learn/step/12164#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sun, 18 Sep 2022 08:32:31 UTC
+record: -1
