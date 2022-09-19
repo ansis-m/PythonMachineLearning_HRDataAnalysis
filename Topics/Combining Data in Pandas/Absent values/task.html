@@ -1,0 +1,7 @@
+<h2>Absent values</h2>
+<html><body><p>You have two <code class="java">DataFrames</code>:</p>
+<ul>
+<li><code class="java">authors</code> keeps authors' names and their books;</li>
+<li><code class="java">ratings</code> — authors' names and average ratings of each book on several websites.</li>
+</ul>
+<p>The names in the datasets overlap but they are not in a one-to-one correspondence. Suppose you merged <code class="java">authors</code> and <code class="java">ratings</code>. Now, your output includes authors only if they can be found in <code class="java">ratings</code>; moreover, they have NaN in columns corresponding to the columns from <code class="java">authors</code>, if their names are not in this <code class="java">DataFrame</code>. Which operation would give us with such a result?</p></body></html>

@@ -118,5 +118,8 @@ files:
         MergingTest().run_tests()
   learner_created: false
 feedback_link: https://hyperskill.org/projects/268/stages/1359/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Mon, 19 Sep 2022 09:49:25 UTC
 record: -1

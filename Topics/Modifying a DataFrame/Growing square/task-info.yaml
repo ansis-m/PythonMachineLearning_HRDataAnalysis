@@ -1,0 +1,21 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: |-
+    import pandas as pd
+
+    df = pd.DataFrame({'a': [1, 4], 'b': [2, 5]})
+
+    # your code here
+    ...
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/13011#comment
+status: Solved
+feedback:
+  message: |-
+    <html>You could reward yourself, it was a hard task!
+
+    </html>
+  time: Mon, 19 Sep 2022 07:48:03 UTC
+record: -1

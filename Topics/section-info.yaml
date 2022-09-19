@@ -1,3 +1,7 @@
 content:
 - DataFrame
 - Accessing data in a DataFrame
+- Conditional selection
+- Sorting Data in Pandas
+- Modifying a DataFrame
+- Combining Data in Pandas

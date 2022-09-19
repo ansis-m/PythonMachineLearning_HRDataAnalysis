@@ -1,0 +1,14 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: |-
+    # your code here, the DataFrame is already loaded as penguins_df.
+    selecting_task = ...
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/13305#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 19 Sep 2022 07:07:42 UTC
+record: -1

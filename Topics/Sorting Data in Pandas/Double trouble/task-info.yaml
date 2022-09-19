@@ -1,0 +1,15 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: "import pandas as pd\n\ngoods = {\n    \"type\": ['PC', 'monitor', 'printer',\
+    \ 'notebook', 'PC'], \n    \"price\": [450, 150, 175, 600, 500],\n    \"quantity\"\
+    : [5, 2, 10, 15, 5],\n    \"vendor_code\": ['135', '960', '004', '420', '114'],\
+    \ \n}\ndf = pd.DataFrame(goods)\n\n# your code here\nprint(...)"
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15188#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 19 Sep 2022 07:20:06 UTC
+record: -1

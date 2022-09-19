@@ -1,0 +1,18 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: <code>df = df.reindex(sorted(df.columns), axis='columns')</code>
+- text: <code>df = df.reindex(sorted(df.columns), columns='axis')</code>
+- text: <code>df = df.reindex(sorted(df.index), axis='columns')</code>
+- text: <code>df.reindex(sorted(df.columns), axis='columns', inplace=True)</code>
+files:
+- name: main.py
+  visible: true
+  text: |+
+    #  You can experiment here, it won’t be checked
+
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/15184#comment
+status: Solved
+record: -1
+local_check: false
