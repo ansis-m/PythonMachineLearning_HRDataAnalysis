@@ -5,3 +5,5 @@ content:
 - Sorting Data in Pandas
 - Modifying a DataFrame
 - Combining Data in Pandas
+- .loc   .iloc
+- Searching within a pandas DataFrame

@@ -59,8 +59,29 @@ def main():
 
     # 7
     result.sort_index(inplace=True)
-    print(result.index.tolist())
-    print(result.columns.tolist())
+
+    # print(result.salary)
+    #
+    # print(result.index.tolist())
+    # print(result.columns.tolist())
+
+    #8a
+
+    top10hours = result.sort_values(by=['average_monthly_hours'], ascending=False).head(10).Department.values.tolist()
+    print(top10hours)
+
+    #8b
+
+    number_of_projects = result[(result.salary == 'low') & (result.Department == 'IT')].number_project.sum()
+    print(number_of_projects)
+
+    #8c
+    # What are the last evaluation scores and the satisfaction levels
+    # of the employees A4, B7064, and A3033?
+    # Output a Python list where each entry is a list of values
+    # of the last evaluation score and the satisfaction level of an employee.
+
+    print(result.loc[['A4', 'B7064', 'A3033'], ['last_evaluation', 'satisfaction_level']].values.tolist())
 
 
 if __name__ == '__main__':
