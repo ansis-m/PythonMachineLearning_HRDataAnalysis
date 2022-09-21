@@ -30,6 +30,21 @@ def initialize():
         print('Loaded.')
 
 
+def count_bigger_5(df):
+    count = 0
+    for i in df:
+        if i > 5:
+            count += 1
+    return count
+
+
+def share(series):
+    true = 0
+    for i in series:
+        if i:
+            true += 1
+    return true/len(series)
+
 def main():
     initialize()
 
@@ -61,27 +76,66 @@ def main():
     result.sort_index(inplace=True)
 
     # print(result.salary)
-    #
     # print(result.index.tolist())
     # print(result.columns.tolist())
 
     #8a
 
-    top10hours = result.sort_values(by=['average_monthly_hours'], ascending=False).head(10).Department.values.tolist()
-    print(top10hours)
+    # top10hours = result.sort_values(by=['average_monthly_hours'], ascending=False).head(10).Department.values.tolist()
+    # print(top10hours)
 
     #8b
 
-    number_of_projects = result[(result.salary == 'low') & (result.Department == 'IT')].number_project.sum()
-    print(number_of_projects)
+    # number_of_projects = result[(result.salary == 'low') & (result.Department == 'IT')].number_project.sum()
+    # print(number_of_projects)
 
     #8c
-    # What are the last evaluation scores and the satisfaction levels
-    # of the employees A4, B7064, and A3033?
-    # Output a Python list where each entry is a list of values
-    # of the last evaluation score and the satisfaction level of an employee.
 
-    print(result.loc[['A4', 'B7064', 'A3033'], ['last_evaluation', 'satisfaction_level']].values.tolist())
+    # print(result.loc[['A4', 'B7064', 'A3033'], ['last_evaluation', 'satisfaction_level']].values.tolist())
+
+    # *************************************************************************************************
+
+    # the median number of projects the employees in a group worked upon, and how many employees worked on more than five projects;
+    # the mean and median time spent in the company;
+    # the share of employees who've had work accidents;
+    # the mean and standard deviation of the last evaluation score
+
+
+
+    # print(result.columns)
+    # print("\n****************************************************\n")
+    # print(result.groupby(['left']).agg({'number_project': 'median'}))
+    # print("\n****************************************************\n")
+    # print(result.groupby(['left']).agg({'number_project': count_bigger_5}))
+    # print("\n****************************************************\n")
+    # print(result.groupby(['left']).agg({'time_spend_company': 'mean'}).round(2))
+    # print("\n****************************************************\n")
+    # print(result.groupby(['left']).agg({'time_spend_company': 'median'}).round(2))
+    # print("\n****************************************************\n")
+    # print(result.groupby(['left']).agg({'Work_accident': share}).round(2))
+    # print("\n****************************************************\n")
+    # print(result.groupby(['left']).agg({'last_evaluation': 'mean'}).round(2))
+    # print("\n****************************************************\n")
+    # print(result.groupby(['left']).agg({'last_evaluation': 'std'}).round(2).to_dict())
+
+    a = {('number_project', 'median'): result.groupby(['left']).agg({'number_project': 'median'}).to_dict().pop(
+        'number_project')}
+
+    b = {('number_project', 'count_bigger_5'): result.groupby(['left']).agg({'number_project': count_bigger_5}).to_dict().pop('number_project')}
+
+    c = {('time_spend_company', 'mean'): result.groupby(['left']).agg({'time_spend_company': 'mean'}).round(2).to_dict().pop('time_spend_company')}
+
+    d = {('time_spend_company', 'median'): result.groupby(['left']).agg({'time_spend_company': 'median'}).round(2).to_dict().pop('time_spend_company')}
+
+    e = {('Work_accident', 'mean'): result.groupby(['left']).agg({'Work_accident': share}).round(2).to_dict().pop('Work_accident')}
+
+    f = {('last_evaluation', 'mean'): result.groupby(['left']).agg({'last_evaluation': 'mean'}).round(2).to_dict().pop('last_evaluation')}
+
+    g = {('last_evaluation', 'std'): result.groupby(['left']).agg({'last_evaluation': 'std'}).round(2).to_dict().pop('last_evaluation')}
+
+    print(a | b | c | d | e | f | g)
+
+
 
 
 if __name__ == '__main__':

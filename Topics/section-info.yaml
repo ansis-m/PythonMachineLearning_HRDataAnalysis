@@ -7,3 +7,4 @@ content:
 - Combining Data in Pandas
 - .loc   .iloc
 - Searching within a pandas DataFrame
+- Grouping and aggregating data in pandas
